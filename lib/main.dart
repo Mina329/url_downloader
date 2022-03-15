@@ -2,6 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:downloader/Screens/MainMenu.dart';
+import 'package:downloader/Screens/DownloadByURL.dart';
+import 'package:downloader/Screens/DownloadedItems.dart';
+import 'package:downloader/Screens/DownloadByTxt.dart';
+import 'package:downloader/Screens/DownloadingPage.dart';
+
+
 
 void main() {
   runApp( MyApp());
@@ -10,7 +17,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      initialRoute: MainMenu.id,
+      routes: {
+        MainMenu.id : (context) => MainMenu() ,
+        URlDownloader.id : (context)=>URlDownloader(),
+        TxtDownloader.id : (context) => TxtDownloader() ,
+        DownloadingPage.id : (context) => DownloadingPage(),
+        DownloadedItems.id : (context) => DownloadedItems(),
+      },
+    );
   }
 }
 
