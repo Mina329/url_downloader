@@ -3,8 +3,9 @@ import '/constants.dart';
 import 'package:downloader/components/CardButton.dart';
 import 'package:downloader/Screens/DownloadByURL.dart';
 import 'package:downloader/Screens/DownloadByTxt.dart';
-import 'package:downloader/Screens/DownloadingPage.dart';
-import 'package:downloader/Screens/DownloadedItems.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'dart:io';
+
 
 class MainMenu extends StatefulWidget {
   static String id = 'MainMenu';
@@ -39,6 +40,8 @@ class _MainMenuState extends State<MainMenu> {
               children: [
                 Expanded(
                   child: CardButtons(
+                    height: 120.0,
+                    width: 200.0,
                     labeltext: "Download \n   By URl",
                     onpress: (){
                       Navigator.pushNamed(context, URlDownloader.id);
@@ -47,6 +50,8 @@ class _MainMenuState extends State<MainMenu> {
                 )
                 ,Expanded(
                   child: CardButtons(
+                    height: 120.0,
+                    width: 200.0,
                     labeltext: "Download \n    By txt",
                     onpress: (){
                       Navigator.pushNamed(context, TxtDownloader.id);
@@ -56,29 +61,7 @@ class _MainMenuState extends State<MainMenu> {
               ],
             ),
           ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: CardButtons(
-                    labeltext: "Downloading \n      Status",
-                    onpress: (){
-                      Navigator.pushNamed(context, DownloadingPage.id);
-                    },
-                  ),
-                )
-                ,Expanded(
-                  child: CardButtons(
-                    labeltext: "Downloaded \n      Items",
-                    onpress: (){
-                      Navigator.pushNamed(context, DownloadedItems.id);
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
+
         ],
       ),
     );

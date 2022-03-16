@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import '/constants.dart';
 
 class CardButtons extends StatelessWidget {
-  CardButtons({required this.labeltext ,required this.onpress });
+  CardButtons({required this.labeltext ,required this.onpress,required this.height,required this.width });
   final String labeltext ;
   final VoidCallback onpress;
+  final double height;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return TextButton(
       child: Container(
-        height: 120.0,
-        width: 200.0,
+        height: height,
+        width: width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

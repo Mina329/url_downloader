@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:downloader/Screens/MainMenu.dart';
@@ -7,10 +8,16 @@ import 'package:downloader/Screens/DownloadByURL.dart';
 import 'package:downloader/Screens/DownloadedItems.dart';
 import 'package:downloader/Screens/DownloadByTxt.dart';
 import 'package:downloader/Screens/DownloadingPage.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 
 
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FlutterDownloader.initialize(
+      debug: true // optional: set false to disable printing logs to console
+  );
   runApp( MyApp());
 }
 
@@ -30,8 +37,6 @@ class MyApp extends StatelessWidget {
         MainMenu.id : (context) => MainMenu() ,
         URlDownloader.id : (context)=>URlDownloader(),
         TxtDownloader.id : (context) => TxtDownloader() ,
-        DownloadingPage.id : (context) => DownloadingPage(),
-        DownloadedItems.id : (context) => DownloadedItems(),
       },
     );
   }
