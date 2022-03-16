@@ -17,12 +17,10 @@ class _MainMenuState extends State<MainMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF0A0E21),
         title: Text('ME Downloader'),
         titleTextStyle: kTextStyle,
         centerTitle: true,
       ),
-      backgroundColor: Color(0xFF111328),
       body: Column(
 
         crossAxisAlignment: CrossAxisAlignment.stretch,
