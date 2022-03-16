@@ -17,24 +17,31 @@ class _MainMenuState extends State<MainMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.cyanAccent,
+        backgroundColor: Color(0xFF0A0E21),
         title: Text('ME Downloader'),
         titleTextStyle: kTextStyle,
         centerTitle: true,
       ),
-      backgroundColor: Colors.cyan.shade50,
+      backgroundColor: Color(0xFF111328),
       body: Column(
 
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Image.asset('images/downloader.png'),
+          // Image.asset('images/downloader.png'),
+          Center(
+            child: Icon(
+              Icons.download_rounded,
+              size: 350.0,
+              color: Colors.white70,
+            ),
+          ),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: CardButtons(
-                    labeltext: "Download By URl",
+                    labeltext: "Download \n   By URl",
                     onpress: (){
                       Navigator.pushNamed(context, URlDownloader.id);
                     },
@@ -42,7 +49,7 @@ class _MainMenuState extends State<MainMenu> {
                 )
                 ,Expanded(
                   child: CardButtons(
-                    labeltext: "Download By TXT",
+                    labeltext: "Download \n    By txt",
                     onpress: (){
                       Navigator.pushNamed(context, TxtDownloader.id);
                     },
@@ -57,7 +64,7 @@ class _MainMenuState extends State<MainMenu> {
               children: [
                 Expanded(
                   child: CardButtons(
-                    labeltext: "Downloading Status",
+                    labeltext: "Downloading \n      Status",
                     onpress: (){
                       Navigator.pushNamed(context, DownloadingPage.id);
                     },
@@ -65,7 +72,7 @@ class _MainMenuState extends State<MainMenu> {
                 )
                 ,Expanded(
                   child: CardButtons(
-                    labeltext: "Downloaded Items",
+                    labeltext: "Downloaded \n      Items",
                     onpress: (){
                       Navigator.pushNamed(context, DownloadedItems.id);
                     },

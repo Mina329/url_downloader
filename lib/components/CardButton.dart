@@ -22,7 +22,7 @@ class CardButtons extends StatelessWidget {
           ],
         ),
         decoration: BoxDecoration(
-          color: Colors.cyanAccent.shade100,
+          color:  Color(0xFF1D1E33),
           borderRadius: BorderRadius.circular(20.0),
         ),
       ),
